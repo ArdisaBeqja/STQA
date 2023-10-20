@@ -1187,7 +1187,7 @@ public BorderPane mainPage() {
     		    stockbooks.add(book);
     		    try {
 					BillNumber.updateBooks(stockbooks);
-				} catch (IOException e) {}
+				} catch (IOException e) {e.printStackTrace();}
     		    
     		    bookISBN.clear();
     		    title.clear();
@@ -2405,7 +2405,13 @@ public BorderPane mainPage() {
 				username.clear();
 				password.clear();
 				manager = Administrator.getBackManager(manager);
-				usernamePage = manager.getName();
+				if (manager != null) {
+					usernamePage = manager.getName();
+				} else {
+					// Handle the case where 'manager' is null, e.g., provide a default value or throw an exception.
+					System.out.println("error");
+				}
+
 				bttSubmit.getScene().setRoot(mangaerMainPage());
 				
 			}
