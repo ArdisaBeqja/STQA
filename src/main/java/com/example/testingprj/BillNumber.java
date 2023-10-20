@@ -37,8 +37,8 @@ public abstract class BillNumber {
 	        }
 		    
 		}
-		catch(IOException i) {}
-		catch(ClassNotFoundException c) {}
+		catch(IOException i) { i.printStackTrace();}
+		catch(ClassNotFoundException c) { c.printStackTrace(); }
 
 		return stockBooks;
 	}
@@ -95,7 +95,7 @@ public abstract class BillNumber {
 		    
 		}
 		catch(IOException i) {  i.printStackTrace();}
-		catch(ClassNotFoundException c) {}
+		catch(ClassNotFoundException c) { c.printStackTrace(); }
 
 	}
 	
@@ -513,7 +513,8 @@ public static void removeDuplicatesSoldTitles(ArrayList<String> titles, ArrayLis
 			titles.remove(n);
 		}
 	}
-	catch(IndexOutOfBoundsException e) {}
+	catch(IndexOutOfBoundsException e) {e.printStackTrace();}
+
 	
 }
     
