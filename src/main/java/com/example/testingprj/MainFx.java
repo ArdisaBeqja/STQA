@@ -4,7 +4,8 @@ import java.awt.ScrollPane;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
-
+import javafx.scene.control.ComboBox;
+import  javafx.scene.control.ComboBoxBase;
 import javafx.animation.FadeTransition;
 import javafx.animation.FillTransition;
 import javafx.animation.Timeline;
@@ -75,6 +76,7 @@ public class MainFx extends Application implements EventHandler<ActionEvent> {
 	Librarian librarian;
 	Date date;
 	ComboBox comboBoxLibrarian;
+
 	TextField bookISBN = new TextField();
 	Text textBookISBN = new Text("Book ISBN");
 	TextField quantity = new TextField();
@@ -140,7 +142,7 @@ public class MainFx extends Application implements EventHandler<ActionEvent> {
 
 	public static void main(String[] args) throws IOException  {
 		
-		//BillNumber.setInitialStock();
+		BillNumber.setInitialStock();
 		Manager.InstantiateLibrarians();
 		Administrator.InstantiateManagers();
 		Administrator.InstantiateAdmins();
@@ -200,10 +202,11 @@ public BorderPane mainPage() {
 	
 	
 	public BorderPane librarianMainPage() {
-		
-	   
+
+
 		comboBoxLibrarian = new ComboBox(FXCollections.observableArrayList(BillNumber.getISBNName()));
-		
+
+
 		Text textHeaderLibrarian = new Text("Welcome "+usernamePage);
 		StackPane stackHeader = new StackPane();
 		textHeaderLibrarian.setFont(new Font(30));
@@ -580,7 +583,7 @@ public BorderPane mainPage() {
         public void handle(ActionEvent event) {
         	Stage stage = new Stage();
         	Scene scene = new Scene(selectLibrarianPage(lib));
-        	stage.getIcons().add(new Image("bookIcon.png"));
+//        	stage.getIcons().add(new Image("bookIcon.png"));
         	stage.setWidth(465);
         	stage.setHeight(465);
         	stage.setScene(scene);
@@ -891,7 +894,7 @@ public BorderPane mainPage() {
         public void handle(ActionEvent event) {
         	Stage stage = new Stage();
         	Scene scene = new Scene(categoryStock(text));
-        	stage.getIcons().add(new Image("bookIcon.png"));
+//        	stage.getIcons().add(new Image("bookIcon.png"));
         	stage.setWidth(465);
         	stage.setHeight(465);
         	stage.setScene(scene);
@@ -984,7 +987,7 @@ public BorderPane mainPage() {
         public void handle(ActionEvent event) {
         	Stage stage = new Stage();
         	Scene scene = new Scene(stockBookPage(book));
-        	stage.getIcons().add(new Image("bookIcon.png"));
+//        	stage.getIcons().add(new Image("bookIcon.png"));
         	stage.setWidth(465);
         	stage.setHeight(465);
         	stage.setScene(scene);
@@ -1346,7 +1349,7 @@ public BorderPane mainPage() {
         public void handle(ActionEvent event) {
         	Stage stage = new Stage();
         	Scene scene = new Scene(editLibrarianPage(lib));
-        	stage.getIcons().add(new Image("bookIcon.png"));
+//        	stage.getIcons().add(new Image("bookIcon.png"));
         	stage.setWidth(465);
         	stage.setHeight(465);
         	stage.setScene(scene);
@@ -1742,7 +1745,7 @@ public BorderPane mainPage() {
         public void handle(ActionEvent event) {
         	Stage stage = new Stage();
         	Scene scene = new Scene( editManagerPage(mag) );
-        	stage.getIcons().add(new Image("bookIcon.png"));
+//        	stage.getIcons().add(new Image("bookIcon.png"));
         	stage.setWidth(465);
         	stage.setHeight(465);
         	stage.setScene(scene);

@@ -94,7 +94,7 @@ public abstract class BillNumber {
 	        }
 		    
 		}
-		catch(IOException i) {}
+		catch(IOException i) {  i.printStackTrace();}
 		catch(ClassNotFoundException c) {}
 
 	}
@@ -454,10 +454,10 @@ public static ArrayList<String> getISBNName(){
 	
 	ArrayList<Book> array = BillNumber.getStockBooks();
 	ArrayList<String> ans = new ArrayList<>();
-	
-	for (int i=0;i<array.size();i++) {
-		ans.add( array.get(i).getISBN()+" - "+array.get(i).getTitle() );
-	}
+
+    for (Book book : array) {
+        ans.add(book.getISBN() + " - " + book.getTitle());
+    }
 	
 	return ans;
 }
